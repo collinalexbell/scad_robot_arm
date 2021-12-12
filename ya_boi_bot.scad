@@ -59,7 +59,7 @@ translate([50,50,138]) {
 
   translate([-10,-10,0.2]) base_cover();
 
-  translate([-2,-110,233.5]) {
+  translate([-2,-10,233.5]) {
     translate([100,0,0]) rotate([0,$t*90,0]) y_big_arm();
   }
 //}
