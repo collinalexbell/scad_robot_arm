@@ -10,6 +10,7 @@ include <y_big_shell.scad>;
 include <base_cover.scad>;
 include <y_big_arm.scad>;
 include <y_small_arm.scad>;
+include <nema_17.scad>;
 
 dy = center(19.5, 23.5);
 translate([nema_23_xy/2-7,dy,base_plate_thickness]) {
@@ -64,5 +65,8 @@ translate([50,50,138]) {
     translate([100,0,0]) rotate([0,$t*90,0]) y_big_arm();
   }
 
-  translate([-101,-10,431]) y_small_arm();
+  translate([-101,-10,431]){
+    y_small_arm();
+    nema_17();
+  }
 //}
