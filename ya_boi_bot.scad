@@ -7,6 +7,7 @@ include <bearing.scad>;
 include <stepper_adapter.scad>;
 include <z_upper.scad>;
 include <y_big_shell.scad>;
+include <base_cover.scad>;
 
 dy = center(19.5, 23.5);
 translate([nema_23_xy/2-7,dy,base_plate_thickness]) {
@@ -52,3 +53,5 @@ translate([50,50,123.2]) {
 }
 
 translate([50,50,190]) y_big_shell();
+
+translate([-10,-10,0.2]) base_cover();
