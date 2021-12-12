@@ -22,6 +22,17 @@ module champher() {
   }
 }
 
+module top_mount_holes() {
+  color(cnrm(167, 36, 41)) {
+    n=4;
+    translate([0, 0, -55]){
+      for(i=[1:n-1]){ // n-1 is purposeful, we only want 3.
+        rotate([0,0,i*360/n]) translate([10,0,100]) cylinder(d=4, h=10);
+      }
+    }
+  }
+}
+
 module z_upper() {
   difference() {
     color(cnrm(57,59,56)) {
@@ -38,6 +49,6 @@ module z_upper() {
       color(cnrm(45,45,63)) stepper_adapter_holes();
     }
     champher();
+    top_mount_holes();
   }
 }
-
