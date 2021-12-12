@@ -5,6 +5,7 @@ include <z_plate.scad>;
 include <bolt.scad>;
 include <bearing.scad>;
 include <stepper_adapter.scad>;
+include <z_upper.scad>;
 
 dy = center(19.5, 23.5);
 translate([nema_23_xy/2-7,dy,base_plate_thickness]) {
@@ -43,4 +44,8 @@ for(i = [0:n-1]) {
 
 translate([50,50,138]) {
   rotate([180,0,0]) stepper_adapter();
+}
+
+translate([50,50,123.2]) {
+  z_upper();
 }
