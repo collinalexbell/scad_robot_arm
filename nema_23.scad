@@ -19,11 +19,13 @@ module wires(wire_d, wire_l) {
   cube([wire_d,wire_l,wire_d]);
 }
 nema_23_xy    = 57 ;
+pure_black = [0,0,0];
+glow_black = [0.05,0.03,0,0.94];
 module stepper_nema_23() {
     h     = 113;
     xy    = nema_23_xy;
     difference(){
-    cube([nema_23_xy,nema_23_xy,h]);
+    color(glow_black) cube([nema_23_xy,nema_23_xy,h]);
       dxy_hole = (nema_23_xy-hole_distance)/2;
       translate([dxy_hole, dxy_hole,h-5]) {
         holes();
@@ -32,10 +34,11 @@ module stepper_nema_23() {
     wire_d = 4.5;
     wire_l = 220;
     translate([nema_23_xy/2-wire_d/2,-wire_l,0]){
-      wires(wire_d, wire_l);
+      color([.75,0,.75]) wires(wire_d, wire_l);
     }
     translate([xy/2,xy/2,h]) {
-      drive_shaft();
+      grey_lightness = 0.9;
+      color([grey_lightness, grey_lightness, grey_lightness, 0.7]) drive_shaft();
       rest_plate();
     }
 
