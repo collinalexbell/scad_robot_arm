@@ -8,6 +8,7 @@ include <stepper_adapter.scad>;
 include <z_upper.scad>;
 include <y_big_shell.scad>;
 include <base_cover.scad>;
+include <y_big_arm.scad>;
 
 dy = center(19.5, 23.5);
 translate([nema_23_xy/2-7,dy,base_plate_thickness]) {
@@ -48,10 +49,17 @@ translate([50,50,138]) {
   rotate([180,0,0]) stepper_adapter();
 }
 
-translate([50,50,123.2]) {
-  z_upper();
-}
+//rotate([0,0,$t*90]) {
 
-translate([50,50,190]) y_big_shell();
+  translate([50,50,123.2]) {
+    z_upper();
+  }
 
-translate([-10,-10,0.2]) base_cover();
+  translate([50,50,180]) y_big_shell();
+
+  translate([-10,-10,0.2]) base_cover();
+
+  translate([-2,-110,233.5]) {
+    translate([100,0,0]) rotate([0,$t*90,0]) y_big_arm();
+  }
+//}
