@@ -6,6 +6,18 @@ from direct.showbase.ShowBase import ShowBase
 from direct.task import Task
 from direct.actor.Actor import Actor
 
+class Car_Base():
+    def __init__(self):
+        self.x = 0
+        self.y = 0
+        self.zuz = 0
+        self.models = []
+    def add_model(self, model):
+       self.models.append(model)
+
+    def forward(self, units_forward):
+        self.x = self.x + units_forward
+        self.models[0].setPos(self.x, self.y, self.zuz)
 
 class MyApp(ShowBase):
 
@@ -17,8 +29,12 @@ class MyApp(ShowBase):
 
         # Load the environment model.
 
+        self.last_tick = 0
+        self.car_base = Car_Base()
         self.scene = self.loader.loadModel("models/environment")
         self.robot = self.loader.loadModel("./onix_bot.stl")
+        self.car_base.add_model(self.robot)
+
 
         # Reparent the model to render.
 
@@ -52,10 +68,10 @@ class MyApp(ShowBase):
         return Task.cont
 
     def moveRobotTask(self, task):
-        x = task.time * 6.0
-        self.robot.setPos(x,0,0)
+        forward = (task.time - self.last_tick)*4
+        self.car_base.forward(forward)
+        self.last_tick = task.time
         return Task.cont
-
 
 app = MyApp()
 
