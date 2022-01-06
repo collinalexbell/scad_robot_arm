@@ -12,6 +12,7 @@ include <y_big_arm.scad>;
 include <y_small_arm.scad>;
 include <nema_17.scad>;
 include <y_small_arm_zrot_servo.scad>
+include <battery_base.scad>
 
 dy = center(19.5, 23.5);
 translate([nema_23_xy/2-7,dy,base_plate_thickness]) {
@@ -79,3 +80,33 @@ translate([50,50,138]) {
     }
   }
 //}
+
+
+
+
+
+
+
+
+
+
+
+
+
+translate([130,-20,0]) {
+  color(cnrm(167, 36, 41)) battery_base();
+  //static_base();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
