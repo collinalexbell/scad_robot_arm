@@ -95,7 +95,7 @@ translate([50,50,138]) {
 
 translate([130,-20,0]) {
   color(cnrm(167, 36, 41)) battery_base();
-  //static_base();
+//static_base();
 }
 
 
