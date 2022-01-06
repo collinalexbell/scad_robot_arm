@@ -1,0 +1,28 @@
+Q: How do I clear the screen in C++?
+A: Bad:
+
+```
+#include <iostream>
+#include <string>
+
+void ClearScreen()
+{
+cout << string( 100, '\n' );
+}
+```
+
+Q: What hardware should Car_Base.cpp run on?
+A:
+   - RPi Zero?
+     - Standard C++ code without any extra libs.
+     - Relatively low power
+   - Arduino Pro Mini?
+     - Requires arduino.h
+     - Requires a programmer UART
+   - Arduino Nano?
+     - Requires arduino.h
+   - Arduino Mega
+     - Requires arduino.h
+   - RPi4 w/ screen
+     - Standard C++ code without any extra libs.
+     - Requires a lot of power
