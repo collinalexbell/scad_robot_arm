@@ -69,14 +69,17 @@ translate([50,50,138]) {
     translate([100,0,0]) rotate([0,$t*90,0]) y_big_arm();
   }
 
-  translate([-101,-10,431]){
+  translate([-210,-10,208]){
     y_small_arm();
     translate([-7,50,5]){
       nema_17();
-      translate([-200,0,0]){
+      translate([-190,0,0]){
         nema_17();
       }
       translate([-148,-40,4]){
+        y_small_arm_zrot_servo();
+      }
+      translate([-223,-40,4]){
         y_small_arm_zrot_servo();
       }
     }
