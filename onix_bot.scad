@@ -15,6 +15,7 @@ include <y_small_arm_zrot_servo.scad>
 include <battery_base.scad>
 include <battery.scad>
 include <car_base.scad>
+include <end_effector_base.scad>
 
 dy = center(19.5, 23.5);
 translate([nema_23_xy/2-7,dy,base_plate_thickness]) {
@@ -133,6 +134,9 @@ translate([-48,-50,-100]) {
 }
 
 
+translate([-450,0,200])  {
+  end_effector_base();
+}
 
 
 
