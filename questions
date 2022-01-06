@@ -12,17 +12,28 @@ cout << string( 100, '\n' );
 ```
 
 Q: What hardware should Car_Base.cpp run on?
-A:
+Specialized Knowledge:
    - RPi Zero?
      - Standard C++ code without any extra libs.
-     - Relatively low power
+     - Medium power consumption
+     - 1.58 watts
+     - Possible camera module
    - Arduino Pro Mini?
      - Requires arduino.h
      - Requires a programmer UART
+     - .0165 watts
    - Arduino Nano?
      - Requires arduino.h
+     - .095 watts
    - Arduino Mega
      - Requires arduino.h
+     - .455 watts
    - RPi4 w/ screen
      - Standard C++ code without any extra libs.
      - Requires a lot of power
+     - 3.5 watts
+     - Possible camera module
+
+A: RPi Zero for this first iteration
+  - Standard C++ code
+  - Medium power consumption
